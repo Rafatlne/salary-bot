@@ -34,8 +34,6 @@ router.get('/', (request, env) => {
 });
 
 const staticDate = '2024-06-07T18:38:00Z';
-let messageId = null;
-let channelId = null;
 /**
  * Main route for all requests sent from Discord.  All incoming messages will
  * include a JSON payload described here:
@@ -88,7 +86,9 @@ router.post('/', async (request, env) => {
           },
         );
         const initialData = await initialResponse.json();
+        // eslint-disable-next-line no-undef
         messageId = initialData.id;
+        // eslint-disable-next-line no-undef
         channelId = interaction.channel_id;
 
         return new JsonResponse({ success: true });
