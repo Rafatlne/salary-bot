@@ -66,7 +66,7 @@ router.post('/', async (request, env) => {
         const hours = duration.hours();
         const minutes = duration.minutes();
         const seconds = duration.seconds();
-        const content = `** :kekw: SOON, BUT NOT TODAY :kekw: **\n Last Salary: ${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
+        const content = ` :kekw: ** SOON, BUT NOT TODAY** :kekw: \n\n Last Salary: ${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
 
         // Send initial message and store message ID and channel ID
         const initialResponse = await fetch(
