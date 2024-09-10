@@ -66,7 +66,7 @@ router.post('/', async (request, env) => {
         const hours = duration.hours();
         const minutes = duration.minutes();
         const seconds = duration.seconds();
-        const content = `** SOON, BUT NOT TODAY ** \n\n Last Salary: ${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
+        const content = `** SOON, BUT NOT TODAY ** \n\n \`\`\`Last Salary: ${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds ago.\`\`\``;
 
         // Send initial message and store message ID and channel ID
         const initialResponse = await fetch(
