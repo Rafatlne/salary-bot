@@ -33,7 +33,7 @@ router.get('/', (request, env) => {
   return new Response(`👋 ${env.DISCORD_APPLICATION_ID}`);
 });
 
-const staticDate = '2024-08-13T16:12:00Z';
+const staticDate = '2024-09-11T09:27:00Z';
 /**
  * Main route for all requests sent from Discord.  All incoming messages will
  * include a JSON payload described here:
@@ -66,8 +66,13 @@ router.post('/', async (request, env) => {
         const hours = duration.hours();
         const minutes = duration.minutes();
         const seconds = duration.seconds();
-        const content = `\n\n ** SOON, BUT NOT TODAY ** \n\n \`\`\`Last Salary: ${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds ago.\`\`\``;
+        let content;
 
+        if (hours < 23) {
+          content = `\n\n ** You guys got last salary ${hours} hours ago. 😒😒 **`;
+        } else {
+          content = `\n\n ** SOON, BUT NOT TODAY ** \n\n \`\`\`Last Salary: ${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds ago.\`\`\``;
+        }
         // Send initial message and store message ID and channel ID
         const initialResponse = await fetch(
           `https://discord.com/api/v8/interactions/${interaction.id}/${interaction.token}/callback`,
