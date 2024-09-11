@@ -69,7 +69,7 @@ router.post('/', async (request, env) => {
         let content;
 
         if (hours < 23) {
-          content = `\n\n ** You guys got last salary ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds ago ago.** 😒😒`;
+          content = `\n\n ** You guys got last salary ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds ago.** 😒😒`;
         } else {
           content = `\n\n ** SOON, BUT NOT TODAY ** \n\n \`\`\`Last Salary: ${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds ago.\`\`\``;
         }
