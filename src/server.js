@@ -33,7 +33,7 @@ router.get('/', (request, env) => {
   return new Response(`👋 ${env.DISCORD_APPLICATION_ID}`);
 });
 
-const staticDate = '2025-01-13T16:40:00Z';
+const staticDate = '2025-02-12T16:25:00Z';
 /**
  * Main route for all requests sent from Discord.  All incoming messages will
  * include a JSON payload described here:
